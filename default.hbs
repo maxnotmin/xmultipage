@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}} | Mike Maxwell | Arist, Programmer</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "font-awesome-4.0.3/css/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/jPushMenu.css"}}" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    
+    {{! Left menu element }}
+
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+	<h3></h3>
+        <a href="/"><i class="fa fa-home fa-sm1 fa-fw"></i>&nbsp;&nbsp;Blog</a>
+	<a href="/about/"><i class="fa fa-file-o fa-sm1 fa-fw"></i>&nbsp;&nbsp;About</a>
+	<a href="/skills/"><i class="fa fa-file-o fa-sm1 fa-fw"></i>&nbsp;&nbsp;Skills</a>
+	<a href="mailto:mikemax@outlook.com" target="_blank"><i class="fa fa-file-o fa-sm1 fa-fw"></i>&nbsp;&nbsp;Contact Me</a>
+    </nav>
+    
+
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+	     <section class="copyright"><a href="/">blog</a> | <a href="/about-me/">about</a> | <a href="/skills/">skills</a> | <a href="mailto:mikemax@outlook.com" target="_blank">contact me</a></section>
+             <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+        </div>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+
+    <script type="text/javascript" src="{{asset "js/jquery-1.9.1.min.js"}}"></script>	
+    <script type="text/javascript" src="{{asset "js/jPushMenu.js"}}"></script>
+
+
+    <script>
+	jQuery(document).ready(function($) {
+	$('.toggle-menu').jPushMenu();
+	});
+    </script>
+
+    {{! The main JavaScript files for Casper }}
+
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+ 
+
+
+</body>
+</html>
